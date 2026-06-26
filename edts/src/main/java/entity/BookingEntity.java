@@ -1,10 +1,12 @@
-package com.example.concertbooking.entity;
+package entity;
 
+import constant.BookingStatusEnum;
 import jakarta.persistence.*;
 
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -34,8 +36,9 @@ public class BookingEntity extends BaseEntity {
             name = "concert_id",
             nullable = false
     )
-    private Concert concert;
+    private ConcertEntity concert;
 
+    @Column(nullable = false)
     private String bookingCode;
 
     @Column(nullable = false)
@@ -46,6 +49,6 @@ public class BookingEntity extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private BookingStatus status;
+    private BookingStatusEnum status;
 
 }

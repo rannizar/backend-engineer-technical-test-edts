@@ -1,4 +1,4 @@
-package com.example.concertbooking.entity;
+package entity;
 
 import jakarta.persistence.*;
 
@@ -22,7 +22,7 @@ public class ConcertEntity extends BaseEntity {
     private String name;
 
     @Column(nullable = false)
-    private LocalDate concertDate;
+    private LocalDateTime concertDate;
 
     @Column(nullable = false)
     private LocalDateTime bookingStart;
@@ -44,6 +44,6 @@ public class ConcertEntity extends BaseEntity {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Booking> bookings = new ArrayList<>();
+    private List<BookingEntity> bookings = new ArrayList<>();
 
 }

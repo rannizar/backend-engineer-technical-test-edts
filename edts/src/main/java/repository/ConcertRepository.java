@@ -1,6 +1,16 @@
-@Repository
-public interface ConcertRepository extends JpaRepository<Concert, UUID> {
+package repository;
 
-    List<Concert> findByBookingStartBeforeAndBookingEndAfter(LocalDateTime now, LocalDateTime now);
+import entity.ConcertEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.UUID;
+
+@Repository
+public interface ConcertRepository extends JpaRepository<ConcertEntity, UUID> {
+
+    List<ConcertEntity> findByBookingStartBeforeAndBookingEndAfter(LocalDateTime time1, LocalDateTime time2);
 
 }

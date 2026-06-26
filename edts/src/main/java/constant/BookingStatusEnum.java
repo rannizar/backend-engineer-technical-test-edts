@@ -1,6 +1,6 @@
-package com.example.concertbooking.entity;
+package constant;
 
-public enum BookingStatus {
+public enum BookingStatusEnum {
 
     SUCCESS,
 
