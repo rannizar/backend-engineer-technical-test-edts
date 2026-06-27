@@ -68,6 +68,7 @@ public class BookingService {
         booking.setQuantity(request.getQuantity());
         booking.setBookingTime(now);
         booking.setStatus(BookingStatusEnum.SUCCESS);
+        booking.setBookingCode(request.getBookCode());
 
         bookingRepository.save(booking);
 
